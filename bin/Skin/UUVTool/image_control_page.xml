@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window>
+  <HorizontalLayout name="imageControlPanel" inset="2,2,2,2" vscrollbar="true" virtualwnd="imageControlPage">
+    <VerticalLayout bordersize="1" bordercolor="#FF6593CF" inset="2,2,2,2">
+      <!-- 图像控制 -->
+      <VerticalLayout bordercolor="#FF6593CF" inset="1,5,1,1" >
+        <!-- 云台俯仰 -->
+        <HorizontalLayout height="30" bordersize="1" inset="1,5,1,1">
+          <Control width="10" />
+          <Label text="云台俯仰：" textcolor="#FF555555" font="2" width="60" />
+          <Control width="10" />
+          <VerticalLayout>
+            <Control />
+            <Slider name="cloudPitchSlider" tooltip="-100~100" enabled="true" height="10" bkimage="res/progress_hbackground.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" foreimage="res/progress_hforeground.png" min="-100" max="100" value="0" hor="true" />
+            <Control />
+          </VerticalLayout>
+          <Control width="10" />
+          <Edit name="cloudPitchEdit" text="0" maxchar="5" width="50" height="22" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+          <!-- <Button name="cloudPitchBtn" text="设置" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="50" /> -->
+          <Control width="5" />
+          <Button name="cloudPitchRestBtn" text="复位" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="50" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <!-- 云台旋转 -->
+        <HorizontalLayout height="30" bordersize="1" inset="1,5,1,1">
+          <Control width="10" />
+          <Label text="云台旋转：" textcolor="#FF555555" font="2" width="60" />
+          <Control width="10" />
+          <VerticalLayout>
+            <Control />
+            <Slider name="cloudRotateSlider" tooltip="-100~100" enabled="true" height="10" bkimage="res/progress_hbackground.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" foreimage="res/progress_hforeground.png" min="-100" max="100" value="0" hor="true" />
+            <Control />
+          </VerticalLayout>
+          <Control width="10" />
+          <Edit name="cloudRotateEdit" text="0" maxchar="5" width="50" height="22" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+          <!-- <Button name="cloudRotateBtn" text="设置" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="50" /> -->
+          <Control width="5" />
+          <Button name="cloudRotateRestBtn" text="复位" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="50" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <!-- 镜头聚焦 -->
+        <HorizontalLayout height="30" bordersize="1" inset="1,5,1,1">
+          <Control width="10" />
+          <Label text="镜头聚焦：" textcolor="#FF555555" font="2" width="60" />
+          <Control width="10" />
+          <VerticalLayout>
+            <Control />
+            <Slider name="cameraFocusSlider" tooltip="0~100" enabled="true" height="10" bkimage="res/progress_hbackground.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" foreimage="res/progress_hforeground.png" min="0" max="100" value="0" hor="true" />
+            <Control />
+          </VerticalLayout>
+          <Control width="10" />
+          <Edit name="cameraFocusEdit" text="0" maxchar="5" width="50" height="22" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+          <!-- <Button name="cameraFocusBtn" text="设置" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="50" /> -->
+          <Control width="5" />
+          <Button name="cameraFocusRestBtn" text="复位" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="50" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <!-- 镜头变焦 -->
+        <HorizontalLayout height="30" bordersize="1" inset="1,5,1,1">
+          <Control width="10" />
+          <Label text="镜头变焦：" textcolor="#FF555555" font="2" width="60" />
+          <Control width="10" />
+          <VerticalLayout>
+            <Control />
+            <Slider name="cameraZoomSlider" tooltip="0~100" enabled="true" height="10" bkimage="res/progress_hbackground.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" foreimage="res/progress_hforeground.png" min="0" max="100" value="0" hor="true" />
+            <Control />
+          </VerticalLayout>
+          <Control width="10" />
+          <Edit name="cameraZoomEdit" text="0" maxchar="5" width="50" height="22" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+          <!-- <Button name="cameraZoomBtn" text="设置" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="50" /> -->
+          <Control width="5" />
+          <Button name="cameraZoomRestBtn" text="复位" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="50" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <!-- 亮度左 -->
+        <HorizontalLayout height="30" bordersize="1" inset="1,5,1,1">
+          <Control width="10" />
+          <Label text="亮度左：" textcolor="#FF555555" font="2" width="60" />
+          <Control width="10" />
+          <VerticalLayout>
+            <Control />
+            <Slider name="lightLeftSlider" tooltip="0~100" enabled="true" height="10" bkimage="res/progress_hbackground.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" foreimage="res/progress_hforeground.png" min="0" max="100" value="0" hor="true" />
+            <Control />
+          </VerticalLayout>
+          <Control width="10" />
+          <Edit name="lightLeftEdit" text="0" maxchar="5" width="50" height="22" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+          <!-- <Button name="lightLeftBtn" text="设置" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="50" /> -->
+          <Control width="5" />
+          <Button name="lightLeftRestBtn" text="复位" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="50" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <!-- 亮度右 -->
+        <HorizontalLayout height="30" bordersize="1" inset="1,5,1,1">
+          <Control width="10" />
+          <Label text="亮度右：" textcolor="#FF555555" font="2" width="60" />
+          <Control width="10" />
+          <VerticalLayout>
+            <Control />
+            <Slider name="lightRightSlider" tooltip="0~100" enabled="true" height="10" bkimage="res/progress_hbackground.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" foreimage="res/progress_hforeground.png" min="0" max="100" value="0" hor="true" />
+            <Control />
+          </VerticalLayout>
+          <Control width="10" />
+          <Edit name="lightRightEdit" text="0" maxchar="5" width="50" height="22" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+          <!-- <Button name="lightRightBtn" text="设置" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="50" /> -->
+          <Control width="5" />
+          <Button name="lightRightRestBtn" text="复位" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="50" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+ 			 <!-- OSD显示 -->
+        <HorizontalLayout height="30" bordersize="1" inset="1,5,1,1">
+          <Control width="10" />
+          <Label text="OSD显示：" textcolor="#FF555555" font="2" width="60" />
+          <Control />
+          <Option name="openOSDOption" group="osdDisplay" padding="5,3,2,0" selected="false" width="15" height="15" text="" readonly="true" normalimage="file='res/radio.png' source='0,0,15,15'" hotimage="file='res/radio.png' source='0,15,15,30'" selectedimage="file='res/radio.png' source='0,30,15,45'" selectedhotimage="file='res/radio.png' source='0,45,15,60'" />
+          <Label text="开" textcolor="#FF555555" font="2" width="50" height="15" padding="2,4,0,0"  />
+          <Option name="closeOSDOption" group="osdDisplay" padding="5,3,2,0" selected="true" width="15" height="15" text="" readonly="true" normalimage="file='res/radio.png' source='0,0,15,15'" hotimage="file='res/radio.png' source='0,15,15,30'" selectedimage="file='res/radio.png' source='0,30,15,45'" selectedhotimage="file='res/radio.png' source='0,45,15,60'" />
+          <Label text="关" textcolor="#FF555555" font="2" width="50" height="15" padding="2,4,0,0"  />
+          <Control />
+          <Button name="osdBtn" text="设置" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="70" />
+        </HorizontalLayout>
+        <Control height="2" />
+        <!-- 电池显示 -->
+        <HorizontalLayout height="30" bordersize="1" inset="1,5,1,1">
+          <Control width="10" />
+          <Label text="电池显示：" textcolor="#FF555555" font="2" width="60" />
+          <Control />
+          <Option name="openBatteryOption" group="batteryDisplay" padding="5,3,2,0" selected="false" width="15" height="15" text="" readonly="true" normalimage="file='res/radio.png' source='0,0,15,15'" hotimage="file='res/radio.png' source='0,15,15,30'" selectedimage="file='res/radio.png' source='0,30,15,45'" selectedhotimage="file='res/radio.png' source='0,45,15,60'" />
+          <Label text="开" textcolor="#FF555555" font="2" width="50" height="15" padding="2,4,0,0"  />
+          <Option name="closeBatteryOption" group="batteryDisplay" padding="5,3,2,0" selected="true" width="15" height="15" text="" readonly="true" normalimage="file='res/radio.png' source='0,0,15,15'" hotimage="file='res/radio.png' source='0,15,15,30'" selectedimage="file='res/radio.png' source='0,30,15,45'" selectedhotimage="file='res/radio.png' source='0,45,15,60'" />
+          <Label text="关" textcolor="#FF555555" font="2" width="50" height="15" padding="2,4,0,0"  />
+          <Control />
+          <Button name="batteryBtn" text="设置" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="70" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <!-- 摇杆显示 -->
+        <HorizontalLayout height="30" bordersize="1" inset="1,5,1,1">
+          <Control width="10" />
+          <Label text="摇杆显示：" textcolor="#FF555555" font="2" width="60" />
+          <Control />
+          <Option name="openRockerOption" group="rockerDisplay" padding="5,3,2,0" selected="false" width="15" height="15" text="" readonly="true" normalimage="file='res/radio.png' source='0,0,15,15'" hotimage="file='res/radio.png' source='0,15,15,30'" selectedimage="file='res/radio.png' source='0,30,15,45'" selectedhotimage="file='res/radio.png' source='0,45,15,60'" />
+          <Label text="开" textcolor="#FF555555" font="2" width="50" height="15" padding="2,4,0,0"  />
+          <Option name="closeRockerOption" group="rockerDisplay" padding="5,3,2,0" selected="true" width="15" height="15" text="" readonly="true" normalimage="file='res/radio.png' source='0,0,15,15'" hotimage="file='res/radio.png' source='0,15,15,30'" selectedimage="file='res/radio.png' source='0,30,15,45'" selectedhotimage="file='res/radio.png' source='0,45,15,60'" />
+          <Label text="关" textcolor="#FF555555" font="2" width="50" height="15" padding="2,4,0,0"  />
+          <Control />
+          <Button name="rockerBtn" text="设置" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="70" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+      
+
+        <!-- 外设显示 -->
+        <HorizontalLayout height="30" bordersize="1" inset="1,5,1,1">
+          <Control width="10" />
+          <Label text="外设显示：" textcolor="#FF555555" font="2" width="60" />
+          <Control />
+          <Option name="openPeripOption" group="peripDisplay" padding="5,3,2,0" selected="false" width="15" height="15" text="" readonly="true" normalimage="file='res/radio.png' source='0,0,15,15'" hotimage="file='res/radio.png' source='0,15,15,30'" selectedimage="file='res/radio.png' source='0,30,15,45'" selectedhotimage="file='res/radio.png' source='0,45,15,60'" />
+          <Label text="开" textcolor="#FF555555" font="2" width="50" height="15" padding="2,4,0,0"  />
+          <Option name="closePeripOption" group="peripDisplay" padding="5,3,2,0" selected="true" width="15" height="15" text="" readonly="true" normalimage="file='res/radio.png' source='0,0,15,15'" hotimage="file='res/radio.png' source='0,15,15,30'" selectedimage="file='res/radio.png' source='0,30,15,45'" selectedhotimage="file='res/radio.png' source='0,45,15,60'" />
+          <Label text="关" textcolor="#FF555555" font="2" width="50" height="15" padding="2,4,0,0"  />
+          <Control />
+          <Button name="peripBtn" text="设置" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="70" />
+        </HorizontalLayout>
+
+      </VerticalLayout>
+    </VerticalLayout>
+
+  </HorizontalLayout>
+</Window>

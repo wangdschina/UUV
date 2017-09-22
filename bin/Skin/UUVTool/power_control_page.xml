@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window>
+  <HorizontalLayout name="powerControlPanel" inset="2,2,2,2" vscrollbar="true" virtualwnd="powerControlPage">
+    <VerticalLayout bordersize="1" bordercolor="#FF6593CF" inset="2,2,2,2">
+      <!-- 电源控制 -->
+      <VerticalLayout bordercolor="#FF6593CF" inset="1,5,1,1" >
+        <!-- 板载供电控制一 -->
+        <HorizontalLayout height="30" bordersize="1" inset="1,5,1,1">
+          <Control width="10" />
+          <Label text="板载供电控制：" textcolor="#FF555555" font="2" width="100" />
+          <Control width="10" />
+          <Option name="cameraPowerOption" padding="5,3,2,0" selected="true" width="15" height="15" text="" readonly="true" normalimage="file='res/checkbox.png' source='0,0,15,15'" hotimage="file='res/checkbox.png' source='0,15,15,30'" selectedimage="file='res/checkbox.png' source='0,30,15,45'" selectedhotimage="file='res/checkbox.png' source='0,45,15,60'" />
+          <Label text="摄像头" textcolor="#FF555555" font="2" width="50" height="15" padding="2,4,0,0"  />
+          <Option name="poePowerOption" padding="5,3,2,0" selected="true" width="15" height="15" text="" readonly="true" normalimage="file='res/checkbox.png' source='0,0,15,15'" hotimage="file='res/checkbox.png' source='0,15,15,30'" selectedimage="file='res/checkbox.png' source='0,30,15,45'" selectedhotimage="file='res/checkbox.png' source='0,45,15,60'" />
+          <Label text="POE" textcolor="#FF555555" font="2" width="50" height="15" padding="2,4,0,0"  />
+          <Control />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <!-- 板载供电控制二 -->
+        <HorizontalLayout height="30" bordersize="1" inset="1,5,1,1">
+          <Control width="10" />
+          <Label text="" textcolor="#FF555555" font="2" width="100" />
+          <Control width="10" />
+          <Option name="peripPowerOption" padding="5,3,2,0" selected="true" width="15" height="15" text="" readonly="true" normalimage="file='res/checkbox.png' source='0,0,15,15'" hotimage="file='res/checkbox.png' source='0,15,15,30'" selectedimage="file='res/checkbox.png' source='0,30,15,45'" selectedhotimage="file='res/checkbox.png' source='0,45,15,60'" />
+          <Label text="CAN外挂" textcolor="#FF555555" font="2" width="50" height="15" padding="2,4,0,0"  />
+          <Option name="otherPowerOption" padding="5,3,2,0" selected="false" width="15" height="15" text="" readonly="true" normalimage="file='res/checkbox.png' source='0,0,15,15'" hotimage="file='res/checkbox.png' source='0,15,15,30'" selectedimage="file='res/checkbox.png' source='0,30,15,45'" selectedhotimage="file='res/checkbox.png' source='0,45,15,60'" />
+          <Label text="其他" textcolor="#FF555555" font="2" width="50" height="15" padding="2,4,0,0"  />
+          <Control />
+          <Button name="powerOneBtn" text="设置" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="70" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <!-- 功耗模式 -->
+        <HorizontalLayout height="30" bordersize="1" inset="1,5,1,1">
+          <Control width="10" />
+          <Label text="功耗模式：" textcolor="#FF555555" font="2" width="100" />
+          <Control width="10" />
+          <Option name="highConsumOption" group="powerConsumMode" padding="5,3,2,0" selected="true" width="15" height="15" text="" readonly="true" normalimage="file='res/radio.png' source='0,0,15,15'" hotimage="file='res/radio.png' source='0,15,15,30'" selectedimage="file='res/radio.png' source='0,30,15,45'" selectedhotimage="file='res/radio.png' source='0,45,15,60'" />
+          <Label text="高功耗" textcolor="#FF555555" font="2" width="50" height="15" padding="2,4,0,0"  />
+          <Option name="lowConsumOption" group="powerConsumMode" padding="5,3,2,0" selected="false" width="15" height="15" text="" readonly="true" normalimage="file='res/radio.png' source='0,0,15,15'" hotimage="file='res/radio.png' source='0,15,15,30'" selectedimage="file='res/radio.png' source='0,30,15,45'" selectedhotimage="file='res/radio.png' source='0,45,15,60'" />
+          <Label text="低功耗" textcolor="#FF555555" font="2" width="50" height="15" padding="2,4,0,0"  />
+          <Control />
+          <Button name="powerConsumModeBtn" text="设置" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="70" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <!-- 电源报警 -->
+        <!-- <HorizontalLayout height="30" bordersize="1" inset="1,5,1,1">
+          <Control width="10" />
+          <Label text="电源报警：" textcolor="#FF555555" font="2" width="100" />
+          <Control />
+          <Option name="Option" group="powerAlarm" padding="5,3,2,0" selected="true" width="15" height="15" text="" readonly="true" normalimage="file='res/radio.png' source='0,0,15,15'" hotimage="file='res/radio.png' source='0,15,15,30'" selectedimage="file='res/radio.png' source='0,30,15,45'" selectedhotimage="file='res/radio.png' source='0,45,15,60'" />
+          <Label text="开" textcolor="#FF555555" font="2" width="50" height="15" padding="2,4,0,0"  />
+          <Option name="Option" group="powerAlarm" padding="5,3,2,0" selected="false" width="15" height="15" text="" readonly="true" normalimage="file='res/radio.png' source='0,0,15,15'" hotimage="file='res/radio.png' source='0,15,15,30'" selectedimage="file='res/radio.png' source='0,30,15,45'" selectedhotimage="file='res/radio.png' source='0,45,15,60'" />
+          <Label text="关" textcolor="#FF555555" font="2" width="50" height="15" padding="2,4,0,0"  />
+          <Control />
+          <Button name="naviModeBtn" text="设置" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="70" />
+        </HorizontalLayout> -->
+      </VerticalLayout>
+
+    </VerticalLayout>
+
+  </HorizontalLayout>
+</Window>

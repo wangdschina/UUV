@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window caption="0,0,0,64" sizebox="4,4,6,6" roundcorner="5,5,5,5" mininfo="1000,800">
+  <Font name="宋体" size="22" bold="true" />
+  <Font name="宋体" size="12" bold="true" />
+  <Font name="宋体" size="12" />
+  <Default name="VScrollBar" value="width=&quot;10&quot; height=&quot;10&quot; showbutton1=&quot;false&quot; showbutton2=&quot;false&quot; button1normalimage=&quot;file='res/scroll_up.png' source='0,0,10,10'&quot; button1hotimage=&quot;file='res/scroll_up.png' source='10,0,20,10'&quot; button1pushedimage=&quot;file='res/scroll_up.png' source='20,0,30,10'&quot; button2normalimage=&quot;file='res/scroll_down.png' source='0,0,10,10'&quot; button2hotimage=&quot;file='res/scroll_down.png' source='10,0,20,10'&quot; button2pushedimage=&quot;file='res/scroll_down.png' source='20,0,30,10'&quot; thumbnormalimage=&quot;file='res/scroll_vthumb.png' source='0,0,10,16' corner='4,4,4,4'&quot; thumbhotimage=&quot;file='res/scroll_vthumb.png' source='10,0,20,16' corner='4,4,4,4'&quot; thumbpushedimage=&quot;file='res/scroll_vthumb.png' source='20,0,30,16' corner='4,4,4,4'&quot; bknormalimage=&quot;file='res/scroll_vback.png' source='0,0,10,16' corner='4,4,4,4'&quot; bkhotimage=&quot;file='res/scroll_vback.png' source='10,0,20,16' corner='4,4,4,4'&quot; bkpushedimage=&quot;file='res/scroll_vback.png' source='10,0,20,16' corner='4,4,4,4'&quot;" />
+  <Default name="HScrollBar" value="width=&quot;10&quot; height=&quot;10&quot; showbutton1=&quot;false&quot; showbutton2=&quot;false&quot; button1normalimage=&quot;file='res/scroll_left.png' source='0,0,10,10'&quot; button1hotimage=&quot;file='res/scroll_left.png' source='10,0,20,10'&quot; button1pushedimage=&quot;file='res/scroll_left.png' source='20,0,30,10'&quot; button2normalimage=&quot;file='res/scroll_right.png' source='0,0,10,10'&quot; button2hotimage=&quot;file='res/scroll_right.png' source='10,0,20,10'&quot; button2pushedimage=&quot;file='res/scroll_right.png' source='20,0,30,10'&quot; thumbnormalimage=&quot;file='res/scroll_hthumb.png' source='0,0,16,10' corner='4,4,4,4'&quot; thumbhotimage=&quot;file='res/scroll_hthumb.png' source='16,0,32,10' corner='4,4,4,4'&quot; thumbpushedimage=&quot;file='res/scroll_hthumb.png' source='32,0,48,10' corner='4,4,4,4'&quot; bknormalimage=&quot;file='res/scroll_hback.png' source='0,0,16,10' corner='4,4,4,4'&quot; bkhotimage=&quot;file='res/scroll_hback.png' source='16,0,32,10' corner='4,4,4,4'&quot; bkpushedimage=&quot;file='res/scroll_hback.png' source='16,0,32,10' corner='4,4,4,4'&quot;" />
+  <VerticalLayout bkimage="file='res/bg.png' corner='6,97,6,29'" inset="1,0,1,0">
+    <!-- 标题区 -->
+    <HorizontalLayout name="wndCaption" height="64">
+      <HorizontalLayout name="captionTitle" childpadding="6">
+        <Control width="10" />
+        <VerticalLayout>
+          <Control height="20" />
+          <Label text="Sublue UUVTool" textcolor="#FFFFFFFF" width="300" font="0" />
+        </VerticalLayout>
+      </HorizontalLayout>
+      <HorizontalLayout name="captionSysBtn" width="80" height="24" inset="0,1,0,0">
+        <Button name="minBtn" maxwidth="24" maxheight="24" normalimage="file='res/button_minimize.png' source='0,0,24,24'" hotimage="file='res/button_minimize.png' source='24,0,48,24'" pushedimage="file='res/button_minimize.png' source='48,0,72,24'" disabledimage="file='res/button_minimize.png' source='72,0,96,24'" />
+        <Button name="maxBtn" maxwidth="24" maxheight="24" normalimage="file='res/button_maximize.png' source='0,0,24,24'" hotimage="file='res/button_maximize.png' source='24,0,48,24'" pushedimage="file='res/button_maximize.png' source='48,0,72,24'" disabledimage="file='res/button_maximize.png' source='72,0,96,24'" />
+        <Button name="restoreBtn" visible="false" maxwidth="24" maxheight="24" normalimage="file='res/button_maximize.png' source='96,0,120,24'" hotimage="file='res/button_maximize.png' source='120,0,144,24'" pushedimage="file='res/button_maximize.png' source='144,0,168,24'" disabledimage="file='res/button_maximize.png' source='168,0,192,24'" />
+        <Button name="closeBtn" maxwidth="24" maxheight="24" normalimage="file='res/button_close.png' source='0,0,24,24'" hotimage="file='res/button_close.png' source='24,0,48,24'" pushedimage="file='res/button_close.png' source='48,0,72,24'" disabledimage="file='res/button_close.png' source='72,0,96,24'" />
+      </HorizontalLayout>
+    </HorizontalLayout>
+
+    <!-- 客户区 -->
+    <VerticalLayout name="wndBody" bkcolor="#FFFFFFFF">
+      <HorizontalLayout name="mainTabHeader" height="30" bkimage="file='res/tabbar_bk.png' corner='4,4,4,4'" inset="6,3,0,0">
+        <Option width="78" text="白鲨MAX" name="processControlOption" bindtablayoutname="mainTabLayout" bindtabindex="0" textcolor="#FF386382" font="2" normalimage="file='res/tabbar.png' source='0,0,78,25' corner='4,4,4,4'" hotimage="file='res/tabbar.png' source='78,0,156,25' corner='4,4,4,4'" pushedimage="file='res/tabbar.png' source='156,0,234,25' corner='4,4,4,4'" selectedimage="file='res/tabbar.png' source='156,0,234,25' corner='4,4,4,4'" group="main_tab_header" selected="true" />
+      </HorizontalLayout>
+
+      <TabLayout name="mainTabLayout">
+        <!-- 流程控制 -->
+        <HorizontalLayout name="processControlPanel" inset="2,2,2,2" vscrollbar="true">
+          <HorizontalLayout width="400" minwidth="400" maxwidth="500" sepwidth="4" sepimm="true" inset="0,0,4,0">
+            <VerticalLayout bordersize="1" bordercolor="#FF6593CF" inset="1,1,1,1">              
+              <TabLayout name="processLeftTabLayout">
+                <!-- 操作区域 -->
+                <VerticalLayout name="" inset="2,2,2,2">
+
+                  <!-- 网络操作区域 -->
+                  <VerticalLayout height="60" bordersize="1" bordercolor="#FF6593CF" inset="2,2,2,2">
+                    <Control height="5" />
+                    <HorizontalLayout height="15" inset="6,3,0,0">
+                      <Control />
+                      <Label text="网络操作" align="center" textcolor="#FF555555" font="1" width="70" />
+                      <Control />
+                    </HorizontalLayout>
+                    <Control height="10" />
+                    <HorizontalLayout height="24" childpadding="12">
+                      <Control />
+                      <Button name="netOpenBtn" text="打开连接" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="70" />
+                      <Control width="3" />
+                      <Button name="netCloseBtn" text="关闭连接" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="70" />
+                      <Control width="3" />
+                      <!-- <Button name="netStateBtn" text="连接状态" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="70" /> -->
+                      <Control />
+                    </HorizontalLayout>
+                  </VerticalLayout>
+                  <Control height="5" />
+
+                  <!-- 控制操作 -->
+                  <VerticalLayout bordersize="1" bordercolor="#FF6593CF" inset="2,2,2,2" >
+                    <Control height="5" />
+                    <HorizontalLayout height="15" inset="6,3,0,0">
+                      <Control />
+                      <Label text="控制操作" align="center" textcolor="#FF555555" font="1" width="70" />
+                      <Control />
+                    </HorizontalLayout>
+                    <Control height="10" />
+
+                    <HorizontalLayout name="mainTabHeader" height="30" bkimage="file='res/tabbar_bk.png' corner='4,4,4,4'" inset="6,3,0,0">
+                      <Option width="78" text="运动控制" name="moveControlOption" bindtablayoutname="controlTabLayout" bindtabindex="0" textcolor="#FF386382" font="2" normalimage="file='res/tabbar.png' source='0,0,78,25' corner='4,4,4,4'" hotimage="file='res/tabbar.png' source='78,0,156,25' corner='4,4,4,4'" pushedimage="file='res/tabbar.png' source='156,0,234,25' corner='4,4,4,4'" selectedimage="file='res/tabbar.png' source='156,0,234,25' corner='4,4,4,4'" group="control_tab_header" selected="true" />
+                      <Option width="78" text="图像控制" name="imageControlOption" bindtablayoutname="controlTabLayout" bindtabindex="1" textcolor="#FF386382" font="2" normalimage="file='res/tabbar.png' source='0,0,78,25' corner='4,4,4,4'" hotimage="file='res/tabbar.png' source='78,0,156,25' corner='4,4,4,4'" pushedimage="file='res/tabbar.png' source='156,0,234,25' corner='4,4,4,4'" selectedimage="file='res/tabbar.png' source='156,0,234,25' corner='4,4,4,4'" group="control_tab_header" />
+                      <Option width="78" text="电源控制" name="powerControlOption" bindtablayoutname="controlTabLayout" bindtabindex="2" textcolor="#FF386382" font="2" normalimage="file='res/tabbar.png' source='0,0,78,25' corner='4,4,4,4'" hotimage="file='res/tabbar.png' source='78,0,156,25' corner='4,4,4,4'" pushedimage="file='res/tabbar.png' source='156,0,234,25' corner='4,4,4,4'" selectedimage="file='res/tabbar.png' source='156,0,234,25' corner='4,4,4,4'" group="control_tab_header" />
+                      <Option width="78" text="电机控制" name="motoControlOption" bindtablayoutname="controlTabLayout" bindtabindex="3" textcolor="#FF386382" font="2" normalimage="file='res/tabbar.png' source='0,0,78,25' corner='4,4,4,4'" hotimage="file='res/tabbar.png' source='78,0,156,25' corner='4,4,4,4'" pushedimage="file='res/tabbar.png' source='156,0,234,25' corner='4,4,4,4'" selectedimage="file='res/tabbar.png' source='156,0,234,25' corner='4,4,4,4'" group="control_tab_header" />
+                      <!-- <Option width="78" text="机械手控制" name="manipulatorControlOption" bindtablayoutname="controlTabLayout" bindtabindex="3" textcolor="#FF386382" font="2" normalimage="file='res/tabbar.png' source='0,0,78,25' corner='4,4,4,4'" hotimage="file='res/tabbar.png' source='78,0,156,25' corner='4,4,4,4'" pushedimage="file='res/tabbar.png' source='156,0,234,25' corner='4,4,4,4'" selectedimage="file='res/tabbar.png' source='156,0,234,25' corner='4,4,4,4'" group="control_tab_header" /> -->
+                      <Option width="78" text="附加选项" name="sysControlOption" bindtablayoutname="controlTabLayout" bindtabindex="4" textcolor="#FF386382" font="2" normalimage="file='res/tabbar.png' source='0,0,78,25' corner='4,4,4,4'" hotimage="file='res/tabbar.png' source='78,0,156,25' corner='4,4,4,4'" pushedimage="file='res/tabbar.png' source='156,0,234,25' corner='4,4,4,4'" selectedimage="file='res/tabbar.png' source='156,0,234,25' corner='4,4,4,4'" group="control_tab_header" />
+                    </HorizontalLayout>
+
+                    <!-- 工作模式 -->
+                    <!-- <HorizontalLayout bordersize="1" bordercolor="#FF6593CF" inset="2,2,2,2" height="30">
+                       <Control width="10" />
+                       <Label text="工作模式：" textcolor="#FF555555" font="2" width="60" />
+                       <Combo name="workModeCombo" width="60" itemtextpadding="4,0,0,0" itemhotbkcolor="#FFC3E2F8" itemselectedbkcolor="#FFFCEBA9" normalimage="file='res/combo.png' source='0,0,50,24' corner='2,2,23,2'" hotimage="file='res/combo.png' source='0,24,50,48' corner='2,2,23,2'" pushedimage="file='res/combo.png' source='0,48,50,72' corner='2,2,23,2'">
+                        <ListLabelElement text="停止" height="20" userdata="workModeStop" selected="true" />
+                        <ListLabelElement text="手动" height="20" userdata="workModeStop" />
+                        <ListLabelElement text="定深" height="20" userdata="workModeStop" />
+                        <ListLabelElement text="定高" height="20" userdata="workModeStop" />
+                        <ListLabelElement text="自检" height="20" userdata="workModeStop" />
+                      </Combo>
+                      <Control width="10" />
+                      <Button name="" text="设置" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="70" />
+                    </HorizontalLayout>
+                    <Control height="3" /> -->
+                    
+                    <TabLayout name="controlTabLayout">
+                      <!-- 任务配置 -->
+                      <Include source="move_control_page.xml" count="1" />
+                      <Include source="image_control_page.xml" count="1" />
+                      <Include source="power_control_page.xml" count="1" />
+                      <Include source="moto_control_page.xml" count="1" />
+                      <Include source="sys_control_page.xml" count="1" />
+                    </TabLayout>
+                    <!-- <HorizontalLayout height="24" childpadding="12">
+                      <Control />
+                      <Button name="..." text="..." textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="70" />
+                      <Control width="3" />
+                      <Button name="..." text="..." textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="70" />
+                      <Control />
+                    </HorizontalLayout> -->
+                  </VerticalLayout>
+                  <Control height="5" />
+
+                  <VerticalLayout height="80" bordersize="1" bordercolor="#FF6593CF" inset="2,2,2,2">
+                    <Control height="5" />
+                    <HorizontalLayout height="15" inset="6,3,0,0">
+                      <Control />
+                      <Label text="视频操作" align="center" textcolor="#FF555555" font="1" width="70" />
+                      <Control />
+                    </HorizontalLayout>
+                    <Control height="10" />
+                   <!--  <HorizontalLayout height="24" childpadding="12">
+                      <Control />
+                      <Button name="videoPlayBtn" text="播放" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="70" />
+                      <Control width="3" />
+                      <Button name="videoStopBtn" text="停止" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="70" />
+                      <Control width="3" />
+                      <Button name="videoBtn" text="..." textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="70" />
+                      <Control />
+                    </HorizontalLayout>
+                    <Control height="10" /> -->
+                    <HorizontalLayout height="24" childpadding="12">
+                      <Control />
+                      <Button name="videoSnopBtn" text="拍照" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="70" />
+                      <Control width="3" />
+                      <Button name="videoOpenFaceDetectBtn" text="开启人脸" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="70" />
+                      <!-- <Control width="3" />
+                      <Button name="videoCloseFaceDetectBtn" text="关闭人脸" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="70" /> -->
+                      <Control />
+                    </HorizontalLayout>
+                  </VerticalLayout>
+
+                    <!-- <HorizontalLayout height="24" childpadding="12">
+                      <Control width= "1" />
+                      <Label text="拍摄日期：" textcolor="#FF555555" font="2" width="70" />
+                      <Edit name="dateEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+                      <Control width= "10" />
+                    </HorizontalLayout>
+                    <Control height="12" />
+                    <HorizontalLayout height="24" childpadding="12">
+                      <Control width= "1" />
+                      <Label text="拍摄时间：" textcolor="#FF555555" font="2" width="70" />
+                      <Edit name="timeEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+                      <Control width= "10" />
+                    </HorizontalLayout> -->
+                  <Control height="1" />
+                </VerticalLayout>
+
+              </TabLayout>
+            </VerticalLayout>
+          </HorizontalLayout>
+          
+          <!-- 视频操作 -->
+          <HorizontalLayout>
+            <VerticalLayout bordersize="1" bordercolor="#FF6593CF" inset="1,1,1,1">
+              
+              <!-- 视频区域 -->
+              <VerticalLayout inset="2,2,2,2">
+                <VerticalLayout bordersize="1" bordercolor="#FF6593CF" inset="1,1,1,1">
+                  <WndMediaDisplay name="mediaCtrl" />
+                </VerticalLayout>
+              </VerticalLayout>
+
+              <!-- 播放按钮 -->
+              <!-- <VerticalLayout height="45">
+                <Control height="5" />
+                <HorizontalLayout>
+                  <Control />
+                  <VerticalLayout width="22">
+                    <Control height="5" />
+                    <Button name="saveFileBtn" width="20" height="20" tooltip="截图" foreimage="file='res/icon_save.png' dest='0,0,20,20'" normalimage="file='res/button_mask.png' source='0,0,22,22' corner='2,2,2,2'" hotimage="file='res/button_mask.png' source='22,0,44,22' corner='2,2,2,2'" pushedimage="file='res/button_mask.png' source='44,0,66,22' corner='2,2,2,2'" />
+                  </VerticalLayout>
+                  <Control width="10" />
+                </HorizontalLayout>
+              </VerticalLayout>
+
+              <VerticalLayout height="5" /> -->
+
+            </VerticalLayout>
+          </HorizontalLayout>
+
+          <HorizontalLayout width="250" minwidth="250" maxwidth="500" sepwidth="4" sepimm="true" inset="2,2,2,2">
+            <VerticalLayout bordersize="1" bordercolor="#FF6593CF" inset="1,1,1,1">
+              <HorizontalLayout name="mainTabHeader" height="30" bkimage="file='res/tabbar_bk.png' corner='4,4,4,4'" inset="6,3,0,0">
+                <Option width="78" text="数据显示" name="displayControlOption" bindtablayoutname="controlDisplayTabLayout" bindtabindex="0" textcolor="#FF386382" font="2" normalimage="file='res/tabbar.png' source='0,0,78,25' corner='4,4,4,4'" hotimage="file='res/tabbar.png' source='78,0,156,25' corner='4,4,4,4'" pushedimage="file='res/tabbar.png' source='156,0,234,25' corner='4,4,4,4'" selectedimage="file='res/tabbar.png' source='156,0,234,25' corner='4,4,4,4'" group="display_tab_header" selected="true" />
+                <Option width="78" text="日志显示" name="logControlOption" bindtablayoutname="controlDisplayTabLayout" bindtabindex="1" textcolor="#FF386382" font="2" normalimage="file='res/tabbar.png' source='0,0,78,25' corner='4,4,4,4'" hotimage="file='res/tabbar.png' source='78,0,156,25' corner='4,4,4,4'" pushedimage="file='res/tabbar.png' source='156,0,234,25' corner='4,4,4,4'" selectedimage="file='res/tabbar.png' source='156,0,234,25' corner='4,4,4,4'" group="display_tab_header" />
+              </HorizontalLayout>
+                    
+              <TabLayout name="controlDisplayTabLayout">
+                <Include source="data_display_page.xml" count="1" />
+
+                <VerticalLayout inset="2,2,2,2">
+                  <RichEdit name="logRichEdit" multiline="true" vscrollbar="true" autovscroll="true" enabled="true" rich="true" readonly="true" wantreturn="true" wantctrlreturn="false" menu="true" />
+                </VerticalLayout>
+              </TabLayout>
+              <!-- <HorizontalLayout height="24" childpadding="2">
+                <Control />
+                <Option padding="10,4,0,0" width="15" height="15" name="logOption" text="" normalimage="file='res/checkbox.png' source='0,0,15,15'" hotimage="file='res/checkbox.png' source='0,15,15,30'" selectedimage="file='res/checkbox.png' source='0,30,15,45'" selectedhotimage="file='res/checkbox.png' source='0,45,15,60'" selected="true" />
+                <Label text="记录日志" textcolor="#FF555555" font="2" width="50" />
+              </HorizontalLayout> -->
+            </VerticalLayout>
+          </HorizontalLayout>
+        </HorizontalLayout>
+        
+      </TabLayout>
+    </VerticalLayout>
+
+    <!-- 状态区 -->
+    <HorizontalLayout name="wndStatus" height="25">
+      <Control width="4" />
+      <Label name="netStateLabel" text="客户端连接:已断开" textcolor="#FF386382" font="2" />
+    </HorizontalLayout>
+
+    <Control height="4" />
+  </VerticalLayout>
+</Window>

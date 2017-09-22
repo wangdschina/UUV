@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UUVDemo", "UUVDemo\UUVDemo.vcxproj", "{F428C4EB-5CD5-4F02-B49C-4BA163FE13A8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UUV", "UUV\UUV.vcxproj", "{9EB2806D-1D52-4F51-AF96-C60432D3DBB6}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UUVTool", "UUVTool\UUVTool.vcxproj", "{7431EF53-5722-4A76-8294-93C0AA85C087}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F428C4EB-5CD5-4F02-B49C-4BA163FE13A8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F428C4EB-5CD5-4F02-B49C-4BA163FE13A8}.Debug|Win32.Build.0 = Debug|Win32
+		{F428C4EB-5CD5-4F02-B49C-4BA163FE13A8}.Release|Win32.ActiveCfg = Release|Win32
+		{F428C4EB-5CD5-4F02-B49C-4BA163FE13A8}.Release|Win32.Build.0 = Release|Win32
+		{9EB2806D-1D52-4F51-AF96-C60432D3DBB6}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9EB2806D-1D52-4F51-AF96-C60432D3DBB6}.Debug|Win32.Build.0 = Debug|Win32
+		{9EB2806D-1D52-4F51-AF96-C60432D3DBB6}.Release|Win32.ActiveCfg = Release|Win32
+		{9EB2806D-1D52-4F51-AF96-C60432D3DBB6}.Release|Win32.Build.0 = Release|Win32
+		{7431EF53-5722-4A76-8294-93C0AA85C087}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7431EF53-5722-4A76-8294-93C0AA85C087}.Debug|Win32.Build.0 = Debug|Win32
+		{7431EF53-5722-4A76-8294-93C0AA85C087}.Release|Win32.ActiveCfg = Release|Win32
+		{7431EF53-5722-4A76-8294-93C0AA85C087}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

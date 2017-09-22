@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window>
+  <HorizontalLayout name="manipulatorControlPanel" inset="2,2,2,2" vscrollbar="true" virtualwnd="manipulatorControlPage">
+    <VerticalLayout bordersize="1" bordercolor="#FF6593CF" inset="2,2,2,2">
+      <!-- 机械手控制 -->
+      <VerticalLayout bordercolor="#FF6593CF" inset="1,5,1,1" >
+        
+      </VerticalLayout>
+
+    </VerticalLayout>
+
+  </HorizontalLayout>
+</Window>

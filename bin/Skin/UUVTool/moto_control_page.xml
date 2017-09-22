@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window>
+  <HorizontalLayout name="motoControlPanel" inset="2,2,2,2" vscrollbar="true" virtualwnd="motoControlPage">
+    <VerticalLayout bordersize="1" bordercolor="#FF6593CF" inset="2,2,2,2">
+      <!-- 垂直左前 -->
+      <HorizontalLayout height="30" bordersize="1" inset="1,5,1,1">
+        <Control width="10" />
+        <Label text="垂直左前0x50：" textcolor="#FF555555" font="2" width="60" />
+        <Control width="10" />
+        <VerticalLayout>
+          <Control />
+          <Slider name="vLeftFrontSlider" tooltip="-2800~2800" enabled="true" height="10" bkimage="res/progress_hbackground.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" foreimage="res/progress_hforeground.png" min="-2800" max="2800" value="0" hor="true" />
+          <Control />
+        </VerticalLayout>
+        <Control width="10" />
+        <Edit name="vLeftFrontEdit" text="0" maxchar="5" width="50" height="22" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        <!-- <Button name="vLeftFrontBtn" text="设置" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="50" /> -->
+        <Control width="5" />
+        <Button name="vLeftFrontRestBtn" text="复位" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="50" />
+      </HorizontalLayout>
+      <Control height="2" />
+
+      <!-- 垂直右前 -->
+      <HorizontalLayout height="30" bordersize="1" inset="1,5,1,1">
+        <Control width="10" />
+        <Label text="垂直右前0x53：" textcolor="#FF555555" font="2" width="60" />
+        <Control width="10" />
+        <VerticalLayout>
+          <Control />
+          <Slider name="vRightFrontSlider" tooltip="-2800~2800" enabled="true" height="10" bkimage="res/progress_hbackground.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" foreimage="res/progress_hforeground.png" min="-2800" max="2800" value="0" hor="true" />
+          <Control />
+        </VerticalLayout>
+        <Control width="10" />
+        <Edit name="vRightFrontEdit" text="0" maxchar="5" width="50" height="22" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        <!-- <Button name="vRightFrontBtn" text="设置" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="50" /> -->
+        <Control width="5" />
+        <Button name="vRightFrontRestBtn" text="复位" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="50" />
+      </HorizontalLayout>
+      <Control height="2" />
+
+      <!-- 垂直左后 -->
+      <HorizontalLayout height="30" bordersize="1" inset="1,5,1,1">
+        <Control width="10" />
+        <Label text="垂直左后0x51：" textcolor="#FF555555" font="2" width="60" />
+        <Control width="10" />
+        <VerticalLayout>
+          <Control />
+          <Slider name="vLeftBackSlider" tooltip="-2800~2800" enabled="true" height="10" bkimage="res/progress_hbackground.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" foreimage="res/progress_hforeground.png" min="-2800" max="2800" value="0" hor="true" />
+          <Control />
+        </VerticalLayout>
+        <Control width="10" />
+        <Edit name="vLeftBackEdit" text="0" maxchar="5" width="50" height="22" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        <!-- <Button name="vLeftBackBtn" text="设置" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="50" /> -->
+        <Control width="5" />
+        <Button name="vLeftBackRestBtn" text="复位" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="50" />
+      </HorizontalLayout>
+      <Control height="2" />
+
+      <!-- 垂直右后 -->
+      <HorizontalLayout height="30" bordersize="1" inset="1,5,1,1">
+        <Control width="10" />
+        <Label text="垂直右后0x52：" textcolor="#FF555555" font="2" width="60" />
+        <Control width="10" />
+        <VerticalLayout>
+          <Control />
+          <Slider name="vRightBackSlider" tooltip="-2800~2800" enabled="true" height="10" bkimage="res/progress_hbackground.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" foreimage="res/progress_hforeground.png" min="-2800" max="2800" value="0" hor="true" />
+          <Control />
+        </VerticalLayout>
+        <Control width="10" />
+        <Edit name="vRightBackEdit" text="0" maxchar="5" width="50" height="22" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        <!-- <Button name="vRightBackBtn" text="设置" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="50" /> -->
+        <Control width="5" />
+        <Button name="vRightBackRestBtn" text="复位" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="50" />
+      </HorizontalLayout>
+      <Control height="2" />
+
+      <!-- 水平左 -->
+      <HorizontalLayout height="30" bordersize="1" inset="1,5,1,1">
+        <Control width="10" />
+        <Label text="水平左0x58：" textcolor="#FF555555" font="2" width="60" />
+        <Control width="10" />
+        <VerticalLayout>
+          <Control />
+          <Slider name="hLeftSlider" tooltip="-1600~1600" enabled="true" height="10" bkimage="res/progress_hbackground.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" foreimage="res/progress_hforeground.png" min="-1600" max="1600" value="0" hor="true" />
+          <Control />
+        </VerticalLayout>
+        <Control width="10" />
+        <Edit name="hLeftEdit" text="0" maxchar="5" width="50" height="22" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        <!-- <Button name="hLeftBtn" text="设置" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="50" /> -->
+        <Control width="5" />
+        <Button name="hLeftRestBtn" text="复位" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="50" />
+      </HorizontalLayout>
+      <Control height="2" />
+
+      <!-- 水平右 -->
+      <HorizontalLayout height="30" bordersize="1" inset="1,5,1,1">
+        <Control width="10" />
+        <Label text="水平右0x59：" textcolor="#FF555555" font="2" width="60" />
+        <Control width="10" />
+        <VerticalLayout>
+          <Control />
+          <Slider name="hRightSlider" tooltip="-1600~1600" enabled="true" height="10" bkimage="res/progress_hbackground.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" foreimage="res/progress_hforeground.png" min="-1600" max="1600" value="0" hor="true" />
+          <Control />
+        </VerticalLayout>
+        <Control width="10" />
+        <Edit name="hRightEdit" text="0" maxchar="5" width="50" height="22" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        <!-- <Button name="hRightBtn" text="设置" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="50" /> -->
+        <Control width="5" />
+        <Button name="hRightRestBtn" text="复位" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="50" />
+      </HorizontalLayout>
+      <Control height="2" />
+
+      <!-- 姿态板 -->
+      <!-- <HorizontalLayout height="30" bordersize="1" inset="1,5,1,1">
+        <Control width="10" />
+        <Label text="姿态板：" textcolor="#FF555555" font="2" width="100" />
+        <Control />
+        <Option name="gestPlateOpenOption" group="gestPlate" padding="5,3,2,0" selected="true" width="15" height="15" text="" readonly="true" normalimage="file='res/radio.png' source='0,0,15,15'" hotimage="file='res/radio.png' source='0,15,15,30'" selectedimage="file='res/radio.png' source='0,30,15,45'" selectedhotimage="file='res/radio.png' source='0,45,15,60'" />
+        <Label text="启动" textcolor="#FF555555" font="2" width="50" height="15" padding="2,4,0,0"  />
+        <Option name="gestPlateCloseOption" group="gestPlate" padding="5,3,2,0" selected="false" width="15" height="15" text="" readonly="true" normalimage="file='res/radio.png' source='0,0,15,15'" hotimage="file='res/radio.png' source='0,15,15,30'" selectedimage="file='res/radio.png' source='0,30,15,45'" selectedhotimage="file='res/radio.png' source='0,45,15,60'" />
+        <Label text="停止" textcolor="#FF555555" font="2" width="50" height="15" padding="2,4,0,0"  />
+        <Control />
+        <Button name="gestPlateBtn" text="设置" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="70" />
+      </HorizontalLayout> -->
+    
+    </VerticalLayout>
+
+  </HorizontalLayout>
+</Window>

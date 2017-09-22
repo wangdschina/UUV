@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window>
+  <HorizontalLayout name="sysControlPanel" inset="2,2,2,2" vscrollbar="true" virtualwnd="sysControlPage">
+    <VerticalLayout bordersize="1" bordercolor="#FF6593CF" inset="2,2,2,2">
+      <!-- 系统选项 -->
+      <VerticalLayout bordercolor="#FF6593CF" inset="1,5,1,1" >
+        <!-- 机械手控制 -->
+
+			<HorizontalLayout height="30" bordersize="1" inset="1,5,1,1">
+        <Control width="10" />
+        <Label text="机械手控制 ：" textcolor="#FF555555" font="2" width="60" />
+        <Control width="10" />
+        <VerticalLayout>
+          <Control />
+          <Slider name="manipOpenOption" tooltip="-100~100" enabled="true" height="10" bkimage="res/progress_hbackground.png" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" foreimage="res/progress_hforeground.png" min="-100" max="100" value="0" hor="true" />
+          <Control />
+        </VerticalLayout>
+        <Control width="10" />
+        <Edit name="manipOpenEdit" text="0" maxchar="5" width="50" height="22" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        <!-- <Button name="manipulatorControlBtn" text="设置" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="50" /> -->
+        <Control width="5" />
+        <Button name="manipulatorControlRestBtn" text="复位" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="50" />
+      </HorizontalLayout>
+
+        <!-- 系统选项 -->
+        <HorizontalLayout height="30" bordersize="1" inset="1,5,1,1">
+          <Control width="10" />
+          <Label text="系统选项：" textcolor="#FF555555" font="2" width="100" />
+          <Control />
+          <Button name="softRestartBtn" text="软重启" textcolor="#FF555555" normalimage="file='res/button.png' source='0,0,69,22' corner='4,4,4,4'" hotimage="file='res/button.png' source='0,22,69,44' corner='4,4,4,4'" pushedimage="file='res/button.png' source='0,44,69,66' corner='4,4,4,4'"  disabledimage="file='res/button.png' source='0,88,69,110' corner='4,4,4,4'" width="70" />
+        </HorizontalLayout>
+      </VerticalLayout>
+
+    </VerticalLayout>
+
+  </HorizontalLayout>
+</Window>

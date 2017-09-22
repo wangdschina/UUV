@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window>
+  <HorizontalLayout name="dataDisplayPanel" inset="2,2,2,2" vscrollbar="true" virtualwnd="dataDisplayPage">
+    <VerticalLayout bordersize="1" bordercolor="#FF6593CF" inset="2,2,2,2">
+      <VerticalLayout bordercolor="#FF6593CF" inset="1,5,1,1" vscrollbar="true">
+        <Control height="10" />
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="横滚角/0.1：" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="rollEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="俯仰角/0.1：" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="pitchEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="航向角/0.1：" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="headEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="前后速度/%：" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="speedFrontBackEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="横移速度/%：" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="speedTraverseEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="升降速度/%：" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="speedUpDownEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="工作模式：" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="workModeEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="控制模式：" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="controlModeEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="导航模式：" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="naviModeEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="当前深度/0.01：" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="deepCurEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="目标深度/0.01：" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="deepTarEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="板载设备供电：" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="boardDevPowerEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+        
+        
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="功耗模式：" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="powerConsumEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="云台俯仰/0.1：" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="cloudPitchEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="云台旋转/0.1：" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="cloudRotateEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="镜头聚焦/%：" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="cameraFocusEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="镜头变焦/%：" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="cameraZoomEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="亮度左/%：" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="ligthLeftEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="亮度右/%：" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="lightRightEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="0x50电机转速/rpm：" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="vleftFrontEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="0x51电机转速/rpm：" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="vleftBackEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="0x52电机转速/rpm：" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="vrightBackEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="0x53电机转速/rpm：" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="vrightFrontEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="0x58电机转速/rpm：" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="hleftEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="0x59电机转速/rpm：" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="hrightEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="机械手状态：" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="manipStateEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="激光/%：" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="laserEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="舱外温度/0.01：" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="tempEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="盐度/%：" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="saliEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="舱内压力/kpa：" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="pressEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="舱内湿度/%：" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="humidityEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="照度传感器/lux：" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="illuTensorEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="输入电压/0.1：" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="inputVolEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="输入电流/0.01：" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="inputElecEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="电池电压/0.01：" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="batteryVolEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="负载电流/0.01：" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="loadElecEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="SOC状态/0.1%：" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="socStateEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="系统电源状态：" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="sysPowerStateEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="总功率：" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="totalPowerEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+      </VerticalLayout>
+
+    </VerticalLayout>
+
+  </HorizontalLayout>
+</Window>
