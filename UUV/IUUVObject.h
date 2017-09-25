@@ -40,6 +40,12 @@ typedef void (CALLBACK* UUVHandler)(UUV_RESULT pResult);
 */  
 typedef void (CALLBACK* UUVVideoFrame)(UUV_RESULT pFrameYUV);
 
+/** 
+*  @brief       定义USBL返回数据的回调函数  
+*  @param[out]  pusbl：返回的USBL相关数据
+*  @return      成功返回true，否则为false                 
+*/  
+typedef void (CALLBACK* UUVUSBLData)(UUV_RESULT pusbl);
 
 /** 
 *  @brief       创建一个UUV的实例，调用接口之前先调用此函数 
@@ -83,6 +89,15 @@ public:
 	*  @return      成功返回true，否则为false          
 	*/  
 	virtual bool UUV_RegVideoHandler(UUVVideoFrame pVideoHandler) = 0;
+
+	/** 
+	*  @brief       注册USBL返回数据的回调函数 
+	*  @param[in]   pUSBLHandler：USBL数据的回调函数
+	*  @return      成功返回true，否则为false          
+	*/  
+	virtual bool UUV_RegUSBLHandler(UUVUSBLData pUSBLHandler) = 0;
+
+
 
 	/** 
 	*  @brief       UUV获取数据的接口 

@@ -8,9 +8,9 @@ DUI_BEGIN_MESSAGE_MAP(CMotoControlPage, CNotifyPump)
 	DUI_ON_MSGTYPE(DUI_MSGTYPE_CLICK, OnClick)
 	DUI_ON_MSGTYPE(DUI_MSGTYPE_VALUECHANGED, OnValueChanged)
 	DUI_ON_MSGTYPE(DUI_MSGTYPE_RETURN, OnReturn)
-	DUI_END_MESSAGE_MAP()
+DUI_END_MESSAGE_MAP()
 
-	CMotoControlPage::CMotoControlPage()
+CMotoControlPage::CMotoControlPage()
 {
 	m_pUUV = nullptr;
 

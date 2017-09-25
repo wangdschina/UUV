@@ -66,7 +66,7 @@ bool ROV_Recv_procrec(ListQueue *listqueue,unsigned char *datapackage)
 			{
 				Temp_Buffer[count]= listqueue->peekQueue(count);
 			}
-			crc_tmp = Crc16_Check(Temp_Buffer + 8, DATA_TOTAL_LEN - 18);
+			crc_tmp = Tcp_Crc16_Check(Temp_Buffer + 8, DATA_TOTAL_LEN - 18);
 
 
 			if(crc_tmp == (listqueue->peekQueue(DATA_TOTAL_LEN-10)+256*listqueue->peekQueue(DATA_TOTAL_LEN-9)))
@@ -95,4 +95,45 @@ bool ROV_Recv_procrec(ListQueue *listqueue,unsigned char *datapackage)
 	}
 	return Receive_Success_flag;
 
+}
+
+
+static UUV_F32 ByteToFloat(UUV_U8* byteArray)  
+{  
+    return *((float*)byteArray);  
+}  
+
+static UUV_F64 ByteToDouble(UUV_U8* byteArray)  
+{  
+    return *((double*)byteArray);  
+}  
+
+
+/** 
+*  @brief       处理USBL返回的数据 
+*  @param[in]   pResult    
+*  @return      无
+*  @remarks		该回调只用来做显示      
+*  @see          
+*/  
+bool USBL_Recv_procrec(UUV_U8 *pdata,int datalen)
+{
+	bool ret = false;
+	//判断数据的长度 //判断数据的包头包尾
+	UUV_U16 temp_len = *(UUV_U16*)(pdata+2);
+	UUV_U16 head = *(UUV_U16*)pdata;
+	UUV_U8 tail = *(pdata+datalen-1);
+	if((temp_len==datalen)&&(head==0xAAAA)&&(tail==0x0A))
+	{
+		//判断数据的校验和
+		UUV_U16 crc= *(UUV_U16*)(pdata+datalen-3);
+		UUV_U16 calc_crc= Udp_CalcCRC16(0, 5, datalen -8, pdata);
+		if(crc==calc_crc)
+		{
+			 ret = true;
+		}
+	}
+	return ret;
+
+	//解析出目标数据
 }

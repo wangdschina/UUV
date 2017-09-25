@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window>
+  <HorizontalLayout name="extDataDisplayPanel" inset="2,2,2,2" vscrollbar="true" virtualwnd="extDataDisplayPage">
+    <VerticalLayout bordersize="1" bordercolor="#FF6593CF" inset="2,2,2,2">
+
+      <!-- USBL数据显示 -->
+      <VerticalLayout bordersize="1" bordercolor="#FF6593CF" inset="1,5,1,1" vscrollbar="true">
+        <Control height="5" />
+        <HorizontalLayout height="15" inset="6,3,0,0">
+          <Control />
+          <Label text="USBL数据显示" align="center" textcolor="#FF555555" font="1" width="100" />
+          <Control />
+        </HorizontalLayout>
+        <Control height="10" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="相对基阵距离/米" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="relativedDistEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="相对基阵角度/度" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="relativedDirectEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="相对基阵偏北/米" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="relativedPosNorthEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="相对基阵偏东/米" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="relativedPosEastEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="经度/度" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="lonEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+
+        <HorizontalLayout height="24" childpadding="12">
+          <Control width = "1" />
+          <Label text="纬度/度" textcolor="#FF555555" font="2" width="90" />
+          <Edit name="latEdit" text="" readonly="true" normalimage="file='res/edit.png' source='0,0,24,24' corner='2,2,2,2'" hotimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'"  focusedimage="file='res/edit.png' source='24,0,48,24' corner='2,2,2,2'" />
+        </HorizontalLayout>
+        <Control height="2" />
+      </VerticalLayout>
+
+    </VerticalLayout>
+
+  </HorizontalLayout>
+</Window>

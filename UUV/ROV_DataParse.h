@@ -31,3 +31,5 @@ const unsigned char DATA_HEAD_LEN=8;
 const unsigned char DATA_TAIL_LEN=8;
 //处理ROV发回来的原始数据，存入结构体***********************************************
 extern bool ROV_Recv_procrec(ListQueue *listqueue,unsigned char *datapackage);
+
+extern bool USBL_Recv_procrec(UUV_U8 *pdata,int datalen);

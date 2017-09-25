@@ -6,8 +6,8 @@ using Poco::Timespan;
 
 const int MAX_BUFFER_LEN = 512;
 
-const char* LOCAL_ADDR = "127.0.0.1";
-const unsigned short LOCAL_PORT = 8080;
+const char* LOCAL_ADDR = "192.168.99.31";
+const unsigned short LOCAL_PORT = 54321;
 
 CPacketizedUdpImpl::CPacketizedUdpImpl(void) : 
 	m_pClientEvent(NULL), 
@@ -30,12 +30,26 @@ bool CPacketizedUdpImpl::Connect( const char* szHostAddress, unsigned short unPo
 	{
 		m_pDatagramSocket = new DatagramSocket;
 	}
-	m_pDatagramSocket->setReceiveTimeout(Timespan(1, 0));
-	m_pDatagramSocket->bind(SocketAddress(LOCAL_ADDR, LOCAL_PORT));
-	m_pDatagramSocket->connect(SocketAddress(szHostAddress, unPort));
+	
+	try
+	{
+		m_pDatagramSocket->setReceiveTimeout(Timespan(1, 0));
+		m_pDatagramSocket->bind(SocketAddress(LOCAL_ADDR, LOCAL_PORT));
+		m_pDatagramSocket->connect(SocketAddress(szHostAddress, unPort));
 
-	m_thread.start(*this);
-	return true;
+		m_thread.start(*this);
+		return true;
+	}
+	catch (Poco::Exception& exc)
+	{
+		if (m_pClientEvent != NULL)
+		{
+			m_pClientEvent->OnError(exc.displayText());
+		}
+		Disconnect();
+	}
+
+	return false;
 }
 
 void CPacketizedUdpImpl::Disconnect()
@@ -120,9 +134,12 @@ void CPacketizedUdpImpl::run()
 			}
 			else
 			{
-				if (m_pClientEvent != NULL)
+				if(USBL_Recv_procrec((unsigned char*)szBuffer,nRecv))
 				{
-					m_pClientEvent->OnRecvPacket((unsigned char*)szBuffer);
+					if (m_pClientEvent != NULL)
+					{
+						m_pClientEvent->OnRecvPacket((unsigned char*)szBuffer,nRecv);
+					}
 				}
 			}
 		}

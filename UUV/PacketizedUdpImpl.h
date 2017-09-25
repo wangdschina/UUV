@@ -1,5 +1,6 @@
 #pragma once
 #include "packetizedudp.h"
+#include "ROV_DataParse.h"
 #include <mutex>
 
 #include "Poco/Net/DatagramSocket.h"

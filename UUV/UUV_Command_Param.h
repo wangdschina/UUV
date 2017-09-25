@@ -39,10 +39,13 @@ typedef unsigned char           UUV_U8;
 typedef unsigned short          UUV_U16;
 typedef unsigned int            UUV_U32;
 
+
+
 typedef signed char             UUV_S8;
 typedef short                   UUV_S16;
 typedef int					    UUV_S32;
-
+typedef float					UUV_F32;
+typedef double					UUV_F64;
 
 /** 构造UUV类型 */ 
 enum E_UUV_TYPE
@@ -199,8 +202,7 @@ typedef struct
 typedef struct						///< UUV本体状态信息结构体	
 {
 	Attitude ATT;					///< 姿态信息结构体 
-	UUV_U16 power;					///< 板载设备供电状态	0开启，1关闭 bit0:摄像头，bit1:POE,bit2:外挂CAN总线
-	
+	UUV_U16 power;					///< 板载设备供电状态	0开启，1关闭 bit0:摄像头，bit1:POE,bit2:外挂CAN总线	
 	UUV_S16 Temperature;			///< 舱外水温
 	UUV_U16 Salinity;				///< 盐度，来自电导率传感器，百分比
 	UUV_S16 depth;					///< 当前深度[0-10000],单位为0.01米
@@ -214,5 +216,13 @@ typedef struct						///< UUV本体状态信息结构体
 	POWER p_inf;					///< 电源信息	参照结构体POWER
 }UUV_STAT,*PUUV_STAT;
 
-
+typedef struct
+{
+	UUV_F64 uuv_latitude;			///< UUV的纬度，正 表示东半球，负表示西半球
+	UUV_F64 uuv_longitude;			///< UUV的经度，正 表示北半球，负表示南半球
+	UUV_F32 uuv_ralatived_pos_north;///< UUV相对基阵偏北的位置，正数X 表明UUV相对基阵偏北X米
+	UUV_F32 uuv_ralatived_pos_east; ///< UUV相对基阵偏东的位置，正数X 表明UUV相对基阵偏东X米
+	UUV_F32 uuv_ralatived_direction;///< UUV位于基阵的角度，单位：度
+	UUV_F32 uuv_ralatived_distannce;///< UUV位于基阵的距离，单位：米
+}UUV_USBL_INFO,*PUUV_USBL_INFO;
 #endif // UUV_Command_Param_h__

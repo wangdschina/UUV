@@ -29,7 +29,7 @@ public:
 	CNetUdpEventHandler();
 	~CNetUdpEventHandler();
 	
-	virtual int OnRecvPacket(unsigned char *byteStream);
+	virtual int OnRecvPacket(unsigned char *byteStream,int datelen);
 	virtual void OnCloseConnection();
 	virtual void OnError(std::string strDisplayText);
 };

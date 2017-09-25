@@ -6,9 +6,9 @@
 ///
 DUI_BEGIN_MESSAGE_MAP(CPowerControlPage, CNotifyPump)
 	DUI_ON_MSGTYPE(DUI_MSGTYPE_CLICK, OnClick)
-	DUI_END_MESSAGE_MAP()
+DUI_END_MESSAGE_MAP()
 
-	CPowerControlPage::CPowerControlPage()
+CPowerControlPage::CPowerControlPage()
 {
 	m_pUUV = nullptr;
 

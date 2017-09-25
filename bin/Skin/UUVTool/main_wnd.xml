@@ -194,11 +194,14 @@
             <VerticalLayout bordersize="1" bordercolor="#FF6593CF" inset="1,1,1,1">
               <HorizontalLayout name="mainTabHeader" height="30" bkimage="file='res/tabbar_bk.png' corner='4,4,4,4'" inset="6,3,0,0">
                 <Option width="78" text="数据显示" name="displayControlOption" bindtablayoutname="controlDisplayTabLayout" bindtabindex="0" textcolor="#FF386382" font="2" normalimage="file='res/tabbar.png' source='0,0,78,25' corner='4,4,4,4'" hotimage="file='res/tabbar.png' source='78,0,156,25' corner='4,4,4,4'" pushedimage="file='res/tabbar.png' source='156,0,234,25' corner='4,4,4,4'" selectedimage="file='res/tabbar.png' source='156,0,234,25' corner='4,4,4,4'" group="display_tab_header" selected="true" />
-                <Option width="78" text="日志显示" name="logControlOption" bindtablayoutname="controlDisplayTabLayout" bindtabindex="1" textcolor="#FF386382" font="2" normalimage="file='res/tabbar.png' source='0,0,78,25' corner='4,4,4,4'" hotimage="file='res/tabbar.png' source='78,0,156,25' corner='4,4,4,4'" pushedimage="file='res/tabbar.png' source='156,0,234,25' corner='4,4,4,4'" selectedimage="file='res/tabbar.png' source='156,0,234,25' corner='4,4,4,4'" group="display_tab_header" />
+                <Option width="78" text="扩展显示" name="extDisplayControlOption" bindtablayoutname="controlDisplayTabLayout" bindtabindex="1" textcolor="#FF386382" font="2" normalimage="file='res/tabbar.png' source='0,0,78,25' corner='4,4,4,4'" hotimage="file='res/tabbar.png' source='78,0,156,25' corner='4,4,4,4'" pushedimage="file='res/tabbar.png' source='156,0,234,25' corner='4,4,4,4'" selectedimage="file='res/tabbar.png' source='156,0,234,25' corner='4,4,4,4'" group="display_tab_header" />
+                <Option width="78" text="日志显示" name="logControlOption" bindtablayoutname="controlDisplayTabLayout" bindtabindex="2" textcolor="#FF386382" font="2" normalimage="file='res/tabbar.png' source='0,0,78,25' corner='4,4,4,4'" hotimage="file='res/tabbar.png' source='78,0,156,25' corner='4,4,4,4'" pushedimage="file='res/tabbar.png' source='156,0,234,25' corner='4,4,4,4'" selectedimage="file='res/tabbar.png' source='156,0,234,25' corner='4,4,4,4'" group="display_tab_header" />
               </HorizontalLayout>
                     
               <TabLayout name="controlDisplayTabLayout">
                 <Include source="data_display_page.xml" count="1" />
+
+                <Include source="ext_data_display_page.xml" count="1" />
 
                 <VerticalLayout inset="2,2,2,2">
                   <RichEdit name="logRichEdit" multiline="true" vscrollbar="true" autovscroll="true" enabled="true" rich="true" readonly="true" wantreturn="true" wantctrlreturn="false" menu="true" />

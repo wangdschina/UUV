@@ -59,8 +59,14 @@ CNetUdpEventHandler::~CNetUdpEventHandler()
 
 }
 
-int CNetUdpEventHandler::OnRecvPacket( unsigned char *byteStream )
+int CNetUdpEventHandler::OnRecvPacket( unsigned char *byteStream,int datelen )
 {
+	
+	if (CROVSharkMax::m_pUSBLHandler)
+	{
+		UUV_RESULT pResult = (UUV_RESULT)((PUUV_USBL_INFO)(byteStream+datelen-35));
+		CROVSharkMax::m_pUSBLHandler(pResult);
+	}
 	return 0;
 }
 

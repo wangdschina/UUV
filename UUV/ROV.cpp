@@ -38,3 +38,8 @@ bool CROV::UUV_RegVideoHandler( UUVVideoFrame pVideoHandler )
 	m_nErrno = ERR_NOTSUPPORTED;
 	return false;
 }
+bool CROV::UUV_RegUSBLHandler( UUVUSBLData pUSBLHandler )
+{
+	m_nErrno = ERR_NOTSUPPORTED;
+	return false;
+}

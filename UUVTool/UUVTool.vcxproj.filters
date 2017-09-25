@@ -45,6 +45,9 @@
     <ClCompile Include="DataDisplayPage.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="ExtDataDisplayPage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainWnd.h">
@@ -78,6 +81,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="DataDisplayPage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtDataDisplayPage.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

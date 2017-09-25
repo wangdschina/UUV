@@ -24,6 +24,8 @@ enum UUV_COMMAND
 	UUV_NET_CLOSE,							///<	<set>关闭网络
 	UUV_NET_STATE,							///<	<get>获取网络状态
 	UUV_SYSTEM_POWER_SET,					///<	<set>系统软重启  参数固定为1							参数类型 UUV_U8
+	UUV_USBL_NET_OPEN,						///<	<set>打开USBL网络
+	UUV_USBL_NET_CLOSE,						///<	<set>关闭USBL网络
 
 	/** UUV工作模式、控制方式和功耗等参数设置 */ 
 	UUV_WORK_PATTERN_SET = 100,				///<	<set>工作方式   0停止，1自由 2 定深	0xff 为调试模式 启动调试模式，可独立控制各个电机转动		参数类型 UUV_U8

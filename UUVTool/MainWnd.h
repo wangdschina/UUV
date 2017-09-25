@@ -6,6 +6,7 @@
 #include "MotoControlPage.h"
 #include "SysControlPage.h"
 #include "DataDisplayPage.h"
+#include "ExtDataDisplayPage.h"
 
 #define WM_LOGOUTPUT		(WM_USER+1001)
 
@@ -41,6 +42,7 @@ protected:
 
 public:
 	static void CALLBACK UUVResultShow(UUV_RESULT pResult);
+	static void CALLBACK UUVUSBLDataCallBack(UUV_RESULT pResult);
 	static void CALLBACK UUVVideoFrame(UUV_RESULT pResult);
 
 	static void CALLBACK TimerProc(HWND hwnd, UINT uMsg, UINT_PTR idEvent, DWORD dwTime);
@@ -83,6 +85,7 @@ private:
 	CMotoControlPage	m_motoControlPage;
 	CSysControlPage		m_sysControlPage;
 	CDataDisplayPage	m_dataDisplayPage;
+	CExtDataDisplayPage m_extDataDisplayPage;
 
 private:
 	/*	±ÍÃ‚¿∏	*/

@@ -8,9 +8,9 @@ DUI_BEGIN_MESSAGE_MAP(CSysControlPage, CNotifyPump)
 	DUI_ON_MSGTYPE(DUI_MSGTYPE_CLICK, OnClick)
 	DUI_ON_MSGTYPE(DUI_MSGTYPE_VALUECHANGED, OnValueChanged)
 	DUI_ON_MSGTYPE(DUI_MSGTYPE_RETURN, OnReturn)
-	DUI_END_MESSAGE_MAP()
+DUI_END_MESSAGE_MAP()
 
-	CSysControlPage::CSysControlPage()
+CSysControlPage::CSysControlPage()
 {
 	m_pUUV = nullptr;
 
@@ -21,6 +21,9 @@ DUI_BEGIN_MESSAGE_MAP(CSysControlPage, CNotifyPump)
 	m_pManipulatorStopBtn = nullptr;
 	m_pManipulatorControlBtn = nullptr;
 	m_pManipOpenEdit = nullptr;
+
+	m_pUsblNetOpenBtn = nullptr;
+	m_pUsblNetCloseBtn = nullptr;
 
 	m_pSoftRestartBtn = nullptr;
 }
@@ -43,6 +46,9 @@ void CSysControlPage::InitWindow()
 	m_pManipulatorControlBtn = static_cast<CButtonUI*>(m_pSysControlPanel->FindSubControl(_T("manipulatorControlBtn")));
 	m_pManipulatorStopBtn = static_cast<CButtonUI*>(m_pSysControlPanel->FindSubControl(_T("manipulatorControlRestBtn")));
 	m_pManipOpenEdit = static_cast<CEditUI*>(m_pSysControlPanel->FindSubControl(_T("manipOpenEdit")));
+
+	m_pUsblNetOpenBtn = static_cast<CButtonUI*>(m_pSysControlPanel->FindSubControl(_T("usblNetOpenBtn")));
+	m_pUsblNetCloseBtn = static_cast<CButtonUI*>(m_pSysControlPanel->FindSubControl(_T("usblNetCloseBtn")));
 
 	m_pSoftRestartBtn = static_cast<CButtonUI*>(m_pSysControlPanel->FindSubControl(_T("softRestartBtn")));
 }
@@ -71,6 +77,14 @@ void CSysControlPage::OnClick( TNotifyUI& msg )
 	else if (msg.pSender == m_pSoftRestartBtn)
 	{
 		this->ClickSoftRestartBtn();
+	}
+	else if (msg.pSender == m_pUsblNetOpenBtn)
+	{
+		this->ClickUsblNetOpenBtn();
+	}
+	else if (msg.pSender == m_pUsblNetCloseBtn)
+	{
+		this->ClickUsblNetCloseBtn();
 	}
 
 }
@@ -129,4 +143,20 @@ void CSysControlPage::ClickManipStopBtn()
 	m_pManipOpenSlider->SetValue(0);
 	m_pManipOpenEdit->SetText(_T("0"));
 	this->ClickManipControlBtn();
+}
+
+void CSysControlPage::ClickUsblNetOpenBtn()
+{
+	if(!m_pUUV->UUV_Set(UUV_USBL_NET_OPEN, nullptr))
+	{
+		LogMsg(WT_EVENTLOG_ERROR_TYPE, _T("´ò¿ªUSBLÁ¬½ÓÊ§°Ü£¬´íÎóÂë %d"), m_pUUV->UUV_GetErrno());
+	}
+}
+
+void CSysControlPage::ClickUsblNetCloseBtn()
+{
+	if(!m_pUUV->UUV_Set(UUV_USBL_NET_CLOSE, nullptr))
+	{
+		LogMsg(WT_EVENTLOG_ERROR_TYPE, _T("¹Ø±ÕUSBLÁ¬½ÓÊ§°Ü£¬´íÎóÂë %d"), m_pUUV->UUV_GetErrno());
+	}
 }

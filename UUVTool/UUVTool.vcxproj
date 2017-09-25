@@ -87,6 +87,7 @@
   <ItemGroup>
     <ClCompile Include="CWndUI.cpp" />
     <ClCompile Include="DataDisplayPage.cpp" />
+    <ClCompile Include="ExtDataDisplayPage.cpp" />
     <ClCompile Include="ImageControlPage.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainWnd.cpp" />
@@ -99,6 +100,7 @@
   <ItemGroup>
     <ClInclude Include="CWndUI.h" />
     <ClInclude Include="DataDisplayPage.h" />
+    <ClInclude Include="ExtDataDisplayPage.h" />
     <ClInclude Include="ImageControlPage.h" />
     <ClInclude Include="MainWnd.h" />
     <ClInclude Include="MotoControlPage.h" />

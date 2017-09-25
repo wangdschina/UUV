@@ -93,6 +93,12 @@
     <ClInclude Include="PacketizedUdpImpl.h">
       <Filter>头文件\Util</Filter>
     </ClInclude>
+    <ClInclude Include="..\include\StringUtil.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Path.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

@@ -89,6 +89,8 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\include\Path.h" />
+    <ClInclude Include="..\include\StringUtil.h" />
     <ClInclude Include="BaseFunc.h" />
     <ClInclude Include="DirectUtility.h" />
     <ClInclude Include="NetEventHandler.h" />

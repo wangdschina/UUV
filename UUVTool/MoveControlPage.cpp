@@ -10,9 +10,9 @@ DUI_BEGIN_MESSAGE_MAP(CMoveControlPage, CNotifyPump)
 	DUI_ON_MSGTYPE(DUI_MSGTYPE_SELECTCHANGED, OnSelectChanged)
 	DUI_ON_MSGTYPE(DUI_MSGTYPE_TEXTCHANGED, OnTextChanged)
 	DUI_ON_MSGTYPE(DUI_MSGTYPE_RETURN, OnReturn)
-	DUI_END_MESSAGE_MAP()
+DUI_END_MESSAGE_MAP()
 
-	CMoveControlPage::CMoveControlPage()
+CMoveControlPage::CMoveControlPage()
 {
 	m_pUUV = nullptr;
 

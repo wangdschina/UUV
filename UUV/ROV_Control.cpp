@@ -190,6 +190,6 @@ void ROV_Control::ROV_RC_CMD_Assemble()
 		  CMD_RCtoROV .power&=~(1<<15);
 	 }
 	CMD_RCtoROV.Send_Cnt++;
-    CMD_RCtoROV.crc16 = Crc16_Check((unsigned char *)&CMD_RCtoROV + 8, sizeof(ROV_CMD) - 18);//crc校验值，不含开始和结尾的标志
+    CMD_RCtoROV.crc16 = Tcp_Crc16_Check((unsigned char *)&CMD_RCtoROV + 8, sizeof(ROV_CMD) - 18);//crc校验值，不含开始和结尾的标志
 	
 }

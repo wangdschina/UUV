@@ -4,12 +4,12 @@
 
 #include "ToolTask.h"
 
-const char* DEFAULT_ADDR = "127.0.0.1";
+const char* DEFAULT_ADDR = "192.168.99.31";
 const unsigned short DEFAULT_PORT = 12345;
 
 UUVHandler CROVSharkMax::m_pHandler = nullptr;
 UUVVideoFrame CROVSharkMax::m_pVideoHandler = nullptr;
-
+UUVUSBLData  CROVSharkMax::m_pUSBLHandler = nullptr;
 CDirectUtility CROVSharkMax::m_dxUtility;
 HWND CROVSharkMax::m_hWnd = NULL;
 
@@ -67,6 +67,21 @@ bool CROVSharkMax::UUV_RegVideoHandler( UUVVideoFrame pVideoHandler )
 	LogMsg(WT_EVENTLOG_INFORMATION_TYPE, _T("摄像头回调函数注册成功"));
 	return true;
 }
+
+ bool CROVSharkMax::UUV_RegUSBLHandler(UUVUSBLData pUSBLHandler) 
+{
+	if (pUSBLHandler == nullptr)
+	{
+		m_nErrno = ERR_INVALIDPARAM;
+		LogMsg(WT_EVENTLOG_ERROR_TYPE, _T("USBL回调函数注册失败，错误码%d"), m_nErrno);
+		return false;
+	}
+
+	m_pUSBLHandler = pUSBLHandler;
+	LogMsg(WT_EVENTLOG_INFORMATION_TYPE, _T("USBL回调函数注册成功"));
+	return true;
+}
+
 
 bool CROVSharkMax::UUV_Get( UUV_COMMAND strCommand, UUV_RESULT& pResult )
 {
@@ -197,6 +212,16 @@ bool CROVSharkMax::UUV_Set( UUV_COMMAND strCommand, UUV_PARAM param )
 	case UUV_MANIP_OPERATION_SET:
 		{
 			bRet = Manipulator_Operation_Set(param);
+		}
+		break;
+	case UUV_USBL_NET_OPEN:
+		{
+			bRet = USBL_Net_Open();
+		}
+		break;
+	case UUV_USBL_NET_CLOSE:
+		{
+			bRet = USBL_Net_Close();
 		}
 		break;
 	default:
@@ -647,7 +672,6 @@ bool CROVSharkMax::Net_Open( UUV_PARAM param )
 		m_nErrno = ERR_TIMEOUT;
 		return false;
 	}
-
 	m_spTcpClient->SetClientListener(&m_tcpClientNetEventHandler);
 
 	m_hWnd = pNetOpen->hWnd;
@@ -660,13 +684,6 @@ bool CROVSharkMax::Net_Open( UUV_PARAM param )
 		return false;
 	}
 #endif
-
-	if (!m_spUdpClient->Connect(DEFAULT_ADDR, DEFAULT_PORT))
-	{
-		m_nErrno = ERR_TIMEOUT;
-		return false;
-	}
-	m_spUdpClient->SetClientListener(&m_udpClientNetEventHandler);
 
 	LogMsg(WT_EVENTLOG_INFORMATION_TYPE, _T("网络已连接"));
 	return true;
@@ -691,12 +708,6 @@ bool CROVSharkMax::Net_Close( void )
 		m_spTcpClient->SetClientListener(nullptr);
 
 		spClient->m_bManualDisconn = true;
-	}
-
-	if (m_spUdpClient)
-	{
-		m_spUdpClient->Disconnect();
-		m_spUdpClient->SetClientListener(nullptr);
 	}
 
 	LogMsg(WT_EVENTLOG_INFORMATION_TYPE, _T("网络已断开"));
@@ -745,5 +756,30 @@ bool CROVSharkMax::VideoStream_Close()
 	}
 
 	LogMsg(WT_EVENTLOG_INFORMATION_TYPE, _T("摄像头已关闭"));
+	return true;
+}
+
+bool CROVSharkMax::USBL_Net_Open( void )
+{
+	m_spUdpClient->SetClientListener(&m_udpClientNetEventHandler);
+	if (!m_spUdpClient->Connect(DEFAULT_ADDR, DEFAULT_PORT))
+	{
+		m_nErrno = ERR_TIMEOUT;
+		return false;
+	}
+
+	LogMsg(WT_EVENTLOG_INFORMATION_TYPE, _T("USBL网络已连接"));
+	return true;
+}
+
+bool CROVSharkMax::USBL_Net_Close( void )
+{
+	if (m_spUdpClient)
+	{
+		m_spUdpClient->Disconnect();
+		m_spUdpClient->SetClientListener(nullptr);
+	}
+
+	LogMsg(WT_EVENTLOG_INFORMATION_TYPE, _T("USBL网络已关闭"));
 	return true;
 }

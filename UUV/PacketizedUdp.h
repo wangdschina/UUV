@@ -8,7 +8,7 @@ class IPacketizedUdpClientEvent
 {
 public:
 	virtual ~IPacketizedUdpClientEvent() {}
-	virtual int OnRecvPacket(unsigned char *byteStream) = 0;
+	virtual int OnRecvPacket(unsigned char *byteStream,int datelen) = 0;
 	virtual void OnCloseConnection() = 0;
 	virtual void OnError(std::string strDisplayText) = 0;
 };

@@ -5,7 +5,7 @@
 //////////////////////////////////////////////////////////////////////////
 ///
 DUI_BEGIN_MESSAGE_MAP(CDataDisplayPage, CNotifyPump)
-	DUI_END_MESSAGE_MAP()
+DUI_END_MESSAGE_MAP()
 
 CDataDisplayPage::CDataDisplayPage()
 {

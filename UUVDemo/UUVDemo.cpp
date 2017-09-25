@@ -37,6 +37,10 @@ short nRoll = 0;
 PUUV_STAT puuv_status = nullptr;
 
 
+/** 定义USBL数据对象指针 */ 
+PUUV_USBL_INFO pusbl_data = nullptr;
+
+
 /** 定义是否开启人脸识别 */ 
 bool open_face_detect = false;
 
@@ -66,6 +70,22 @@ static void CALLBACK UUVVideoFrameCallBack(UUV_RESULT pResult);
 
 
 /** 
+*  @brief		打印USBL数据 
+*  @param[out]  无
+*  @return		无            
+*/  
+void ShowUSBLData(void);
+
+
+/** 
+*  @brief       USBL数据回调函数 
+*  @param[out]  pResult：USBL返回的数据  
+*  @return      无          
+*/  
+static void CALLBACK UUVUSBLDataCallBack(UUV_RESULT pResult);
+
+
+/** 
 *  @brief       初始化UUV对象 
 *  @param[in]   无 
 *  @return      
@@ -84,7 +104,10 @@ bool InitUUV()
 		{
 			printf("注册UUV本体数据回调失败，错误码%d\n", m_pUUV->UUV_GetErrno());
 		}
-
+		if (!m_pUUV->UUV_RegUSBLHandler(UUVUSBLDataCallBack))
+		{
+			printf("注册UUV USBL数据回调失败，错误码%d\n", m_pUUV->UUV_GetErrno());
+		}
 		if (!m_pUUV->UUV_RegVideoHandler(UUVVideoFrameCallBack))
 		{
 			printf("注册UUV视频数据回调失败，错误码%d\n", m_pUUV->UUV_GetErrno());
@@ -109,6 +132,11 @@ void NetOpen()
 	{
 		printf("打开连接失败，错误码 %d\n", m_pUUV->UUV_GetErrno());
 	}
+
+	if (!m_pUUV->UUV_Set(UUV_USBL_NET_OPEN, NULL))
+	{
+		printf("打开USBL连接失败，错误码%d\n", m_pUUV->UUV_GetErrno());
+	}
 }
 
 
@@ -122,6 +150,11 @@ void NetClose()
 	if(!m_pUUV->UUV_Set(UUV_NET_CLOSE, nullptr))
 	{
 		printf("关闭连接失败，错误码 %d\n", m_pUUV->UUV_GetErrno());
+	}
+
+	if(!m_pUUV->UUV_Set(UUV_USBL_NET_CLOSE, nullptr))
+	{
+		printf("关闭USBL连接失败，错误码 %d\n", m_pUUV->UUV_GetErrno());
 	}
 }
 
@@ -419,6 +452,7 @@ void Help(void)
 		"\t	l	- 左横滚（网络连接后才可进行此操作）\n"
 		"\t	r	- 右横滚（网络连接后才可进行此操作）\n"
 		"\t	p	- 打印本体数据\n"
+		"\t a   - 打印USBL数据\n"
 		"\t	t	- 目标识别\n"
 		"\t	*	- 按任意键开始目标输入\n";
 
@@ -502,6 +536,11 @@ int main(int argc, char* argv[])
 					ShowUUVData();
 				}
 				break;
+			case 'a':
+				{
+					ShowUSBLData();
+				}
+				break;
 			case 'q':
 				{
 					NetClose();
@@ -538,6 +577,8 @@ void CALLBACK UUVResultShow( UUV_RESULT pResult )
 }
 
 
+
+
 /** 
 *  @brief       显示UUV本体返回的数据
 *  @param[in]   无    
@@ -569,6 +610,49 @@ void ShowUUVData(void)
 	printf("水平右电机转速 = %d\n", puuv_status->motor.r_h_motor);
 	//	未完，需要打印别的信息，在此添加
 }
+
+
+/** 
+*  @brief       USBL返回的数据 
+*  @param[in]   pResult    
+*  @return      无
+*  @remarks		该回调只用来做显示      
+*  @see          
+*/  
+void CALLBACK UUVUSBLDataCallBack(UUV_RESULT pResult)
+{
+	if (pusbl_data == nullptr)
+	{
+		pusbl_data = new UUV_USBL_INFO;
+	}
+	pusbl_data = (PUUV_USBL_INFO)pResult;
+}
+
+/** 
+*  @brief       显示UUV本体返回的数据
+*  @param[in]   无    
+*  @return      无
+*  @remarks		      
+*  @see          
+*/  
+void ShowUSBLData(void)
+{
+	if (pusbl_data == nullptr)
+	{
+		printf("未接收到USBL返回的数据，请检查网络是否已连接\n");
+		return;
+	}
+	// Add your code about info of UUV
+	printf("UUV位于基阵的距离 = %f米\n",pusbl_data->uuv_ralatived_distannce);
+	printf("UUV位于基阵的角度 = %f度\n", pusbl_data->uuv_ralatived_direction);
+	printf("UUV相对基阵偏北 = %f米\n", pusbl_data->uuv_ralatived_pos_north);
+	printf("UUV相对基阵偏东 = %f米\n", pusbl_data->uuv_ralatived_pos_east);
+	printf("UUV的经度 = %f度\n", pusbl_data->uuv_longitude);
+	printf("UUV的纬度 = %f度\n", pusbl_data->uuv_latitude);
+
+	//	未完，需要打印别的信息，在此添加
+}
+
 
 
 /** 

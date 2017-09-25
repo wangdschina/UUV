@@ -71,6 +71,9 @@ CMainWndDlg::CMainWndDlg(void)
 
 	m_dataDisplayPage.SetPaintMagager(&m_PaintManager);
 	AddVirtualWnd(_T("dataDisplayPage"), &m_dataDisplayPage);
+
+	m_extDataDisplayPage.SetPaintMagager(&m_PaintManager);
+	AddVirtualWnd(_T("extDataDisplayPage"), &m_extDataDisplayPage);
 }
 
 CMainWndDlg::~CMainWndDlg(void)
@@ -81,6 +84,7 @@ CMainWndDlg::~CMainWndDlg(void)
 	RemoveVirtualWnd(_T("motoControlPage"));
 	RemoveVirtualWnd(_T("sysControlPage"));
 	RemoveVirtualWnd(_T("dataDisplayPage"));
+	RemoveVirtualWnd(_T("extDataDisplayPage"));
 
 	ReleaseUUV(m_pUUV);
 
@@ -159,6 +163,7 @@ void CMainWndDlg::InitWindow()
 	m_motoControlPage.InitWindow();
 	m_sysControlPage.InitWindow();
 	m_dataDisplayPage.InitWindow();
+	m_extDataDisplayPage.InitWindow();
 	WindowImplBase::InitWindow();
 }
 
@@ -372,9 +377,14 @@ LRESULT CMainWndDlg::OnLogOutput( WPARAM wParam, LPARAM lParam )
 	return 0;
 }
 
-void CMainWndDlg::UUVResultShow( UUV_RESULT pResult )
+void CALLBACK CMainWndDlg::UUVResultShow( UUV_RESULT pResult )
 {
 	g_pMainWndDlg->m_dataDisplayPage.ShowData(pResult);
+}
+
+void CALLBACK CMainWndDlg::UUVUSBLDataCallBack( UUV_RESULT pResult )
+{
+	g_pMainWndDlg->m_extDataDisplayPage.ShowData(pResult);
 }
 
 void CALLBACK CMainWndDlg::UUVVideoFrame( UUV_RESULT pResult )
@@ -508,6 +518,10 @@ void CMainWndDlg::InitUUV()
 		if (!m_pUUV->UUV_RegHandler(CMainWndDlg::UUVResultShow))
 		{
 			LogMsg(WT_EVENTLOG_ERROR_TYPE, _T("注册UUV本体数据回调失败，错误码%d"), m_pUUV->UUV_GetErrno());
+		}
+		if (!m_pUUV->UUV_RegUSBLHandler(CMainWndDlg::UUVUSBLDataCallBack))
+		{
+			LogMsg(WT_EVENTLOG_ERROR_TYPE, _T("注册UUV USBL数据回调失败，错误码%d"), m_pUUV->UUV_GetErrno());
 		}
 		if (!m_pUUV->UUV_RegVideoHandler(CMainWndDlg::UUVVideoFrame))
 		{

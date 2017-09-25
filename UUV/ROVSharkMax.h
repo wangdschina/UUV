@@ -17,6 +17,7 @@ public:
 
 	bool UUV_RegHandler(UUVHandler pHandler);
 	bool UUV_RegVideoHandler(UUVVideoFrame pVideoHandler);
+	 bool UUV_RegUSBLHandler(UUVUSBLData pUSBLHandler) ;
 	bool UUV_Get(UUV_COMMAND strCommand, UUV_RESULT& pResult);
 	bool UUV_Set(UUV_COMMAND strCommand, UUV_PARAM	param);
 
@@ -24,6 +25,10 @@ private:
 	bool Net_Open(UUV_PARAM param);
 	bool Net_Close(void);
 	bool Net_State(UUV_RESULT& pResult);
+
+private:
+	bool USBL_Net_Open(void);
+	bool USBL_Net_Close(void);
 
 public:
 	bool VideoStream_Open();
@@ -53,6 +58,7 @@ private:
 public:
 	static UUVHandler		m_pHandler;
 	static UUVVideoFrame	m_pVideoHandler;
+	static UUVUSBLData	    m_pUSBLHandler;
 
 private:
 	std::shared_ptr<IPacketizedTcpClient> m_spTcpClient;

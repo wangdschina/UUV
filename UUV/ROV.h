@@ -9,6 +9,7 @@ public:
 
 	virtual bool UUV_RegHandler(UUVHandler pHandler);
 	virtual bool UUV_RegVideoHandler(UUVVideoFrame pVideoHandler);
+	virtual bool UUV_RegUSBLHandler(UUVUSBLData pUSBLHandler);
 	virtual bool UUV_Get(UUV_COMMAND strCommand, UUV_RESULT& pResult);
 	virtual bool UUV_Set(UUV_COMMAND strCommand, UUV_PARAM	param);
 

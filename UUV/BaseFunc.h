@@ -72,6 +72,15 @@ IPacketizedUdpClient* CreatePacketizedUdpClient();
 *  @param[in]   crc_count：校验数据长度
 *  @return      返回校验值
 */  
-unsigned short Crc16_Check(unsigned char *puchMsg,unsigned char crc_count);
+unsigned short Tcp_Crc16_Check(unsigned char *puchMsg,unsigned char crc_count);
+
+/** 
+*  @brief       CRC16校验 
+*  @param[in]   puchMsg：校验数据 
+*  @param[in]   crc_count：校验数据长度
+*  @return      返回校验值
+*/  
+
+UUV_U16 Udp_CalcCRC16(UUV_U16 crc, UUV_U16 start, UUV_U16 len, UUV_U8* buf);
 
 #endif // BaseFunc_h__
